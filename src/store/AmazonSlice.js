@@ -11,7 +11,6 @@ const initialState = {
   },
 };
 
-console.log("User ID: ", initialState.userInfo._id);
 
 export const amazonSlice = createSlice({
   name: "amazon",

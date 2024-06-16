@@ -64,7 +64,6 @@ export default function OtpVerification() {
         if (response && response.status === 200) {
           const currentUser = auth.currentUser;
           if (currentUser) {
-            console.log("CurrentUser: ", currentUser);
 
             const userDocRef = doc(db, "userData", currentUser.uid);
             const userDoc = await getDoc(userDocRef);
@@ -72,7 +71,6 @@ export default function OtpVerification() {
 
             if (userDoc.exists()) {
               userCart = userDoc.data().cart;
-              console.log("User Cart: ", userCart);
             } else {
               await setDoc(userDocRef, { userId: currentUser.uid, cart: [] });
             }
